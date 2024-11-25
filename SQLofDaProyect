@@ -1,0 +1,45 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 25-11-2024 a las 03:07:11
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.2.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+--
+-- Base de datos: `blacklist`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `blacklist`
+--
+
+CREATE TABLE `blacklist` (
+  `id_blacklist` int(11) NOT NULL,
+  `nombre` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `blacklist`
+--
+
+INSERT INTO `blacklist` (`id_blacklist`, `nombre`) VALUES
+(5, 'Jose Rodriguez');
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `blacklist`
+--
+ALTER TABLE `blacklist`
+  ADD PRIMARY KEY (`id_blacklist`);
+COMMIT;
