@@ -1,30 +1,31 @@
 package co.edu.ue.BlackList.infraestructura;
 
-import co.edu.ue.BlackList.domain.BlackList;
-import co.edu.ue.BlackList.domain.BlackListService;
-import java.util.List; 
-import org.springframework.beans.factory.annotation.Autowired; 
-import org.springframework.web.bind.annotation.CrossOrigin; 
-import org.springframework.web.bind.annotation.GetMapping; 
-import org.springframework.web.bind.annotation.PathVariable; 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping; 
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.RequestBody; 
-import org.springframework.web.bind.annotation.RequestMapping; 
-import org.springframework.web.bind.annotation.RestController; 
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import co.edu.ue.BlackList.domain.BlackList;
+import co.edu.ue.BlackList.domain.BlackListService; 
 
 
 @CrossOrigin(origins = "*", maxAge = 3600) 
 @RestController 
-@RequestMapping({"/blacklist"}) 
-
+@RequestMapping("/blacklist") 
 public class BlackListRest {
     
     @Autowired
     BlackListService service;
     
-            @GetMapping("/blacklist")
+    @GetMapping("/blacklistAll")
     public List<BlackList> listar() {
         return service.listar();
     }
@@ -49,8 +50,4 @@ public class BlackListRest {
     public BlackList delete(@PathVariable("id") int id) {
         return service.delete(id);
     }
-    
-    
-    
-    
 }
